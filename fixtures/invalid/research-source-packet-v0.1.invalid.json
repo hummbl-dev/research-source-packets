@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:invalid:missing-source-contract",
+    "title": "Invalid fixture — missing required sourceContract",
+    "version": "0.1.0",
+    "scope": "Intentionally invalid: omits the required sourceContract field."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate"
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id and schemaVersion."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection."
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:valid:turing1950",
+    "title": "Turing (1950) source packet — valid fixture",
+    "version": "0.1.0",
+    "scope": "Represents the Turing 1950 'Computing Machinery and Intelligence' paper as a single source."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate"
+  },
+  "sourceContract": {
+    "sourceType": "journal-article",
+    "citation": {
+      "title": "Computing Machinery and Intelligence",
+      "authors": ["A. M. Turing"],
+      "year": 1950,
+      "doi": "10.1093/mind/LIX.236.433",
+      "url": "https://academic.oup.com/mind/article/LIX/236/433/986386"
+    },
+    "provenance": {
+      "origin": "Mind via public DOI resolver",
+      "capturedAt": "2024-02-01T12:00:00Z",
+      "method": "manual capture from DOI landing page"
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "self-verified"
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id and schemaVersion.",
+      "Record the evidenceGrade as stated."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection."
+    ]
+  }
+}
