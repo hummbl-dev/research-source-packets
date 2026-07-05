@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:example:shannon1948",
+    "title": "Shannon (1948) source packet — worked example",
+    "version": "0.1.0",
+    "scope": "Represents the foundational information-theory paper as a single source. Does not cover surrounding literature or derivations."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate",
+    "orcid": "0000-0000-0000-0000"
+  },
+  "sourceContract": {
+    "sourceType": "journal-article",
+    "citation": {
+      "title": "A Mathematical Theory of Communication",
+      "authors": ["Claude E. Shannon"],
+      "year": 1948,
+      "doi": "10.1002/j.1538-7305.1948.tb01338.x",
+      "url": "https://ieeexplore.ieee.org/document/6773024"
+    },
+    "provenance": {
+      "origin": "Bell System Technical Journal via public DOI resolver",
+      "capturedAt": "2024-01-15T09:30:00Z",
+      "method": "manual capture from DOI landing page"
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "self-verified"
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id and schemaVersion.",
+      "Record the capturedAt timestamp of the source contract.",
+      "Record the evidenceGrade as stated; do not upgrade it."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection.",
+      "Record which required field or check failed."
+    ],
+    "onCite": [
+      "Cite the underlying source, not the packet, in derivative work.",
+      "Mark the packet posture as candidate in any derivative artifact."
+    ]
+  }
+}
