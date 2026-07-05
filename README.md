@@ -1,6 +1,6 @@
 # Research Source Packets
 
-$(System.Collections.Hashtable.Name) is a public seed repository for research source packets.
+Research Source Packets is a public seed repository for research source packets.
 
 ## Purpose
 
