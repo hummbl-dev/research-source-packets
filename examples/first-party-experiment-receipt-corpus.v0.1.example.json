@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:example:autoresearch-pipeline-receipt-corpus",
+    "title": "autoresearch-pipeline first-party experiment receipt corpus source packet",
+    "version": "0.1.0",
+    "scope": "Represents the public experiment receipt corpus of hummbl-dev/autoresearch-pipeline as a single first-party source. Covers program.md, results.tsv, and docs/experiment_receipts/*.md through Pack 2 (34 governed experiments, 2 kept patches). Does not assert that findings generalize beyond the 26M-parameter / short-training regime, does not promote any kept patch into canon, and does not cover the private founder-mode runtime that produced the corpus."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate"
+  },
+  "sourceContract": {
+    "sourceType": "report",
+    "citation": {
+      "title": "autoresearch-pipeline Experiment Program (PRs #14-#25, Pack 2)",
+      "authors": ["Reuben Bowlby"],
+      "year": 2026,
+      "url": "https://github.com/hummbl-dev/autoresearch-pipeline"
+    },
+    "provenance": {
+      "origin": "hummbl-dev/autoresearch-pipeline public repository, main branch",
+      "capturedAt": "2026-07-06T03:00:00Z",
+      "method": "Manual capture of public repository artifacts at main commit f39a3eec3a24a02c1e11d421d5752953e49d10db. Inspected program.md, results.tsv (243 data rows), docs/experiment_receipts/ (9 receipt docs), and merged PRs #14 through #25."
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "self-verified"
+  },
+  "candidateOutputs": {
+    "citationGraphEntry": {
+      "nodeId": "source:autoresearch-pipeline:receipt-corpus",
+      "sourcePacketId": "rsp:example:autoresearch-pipeline-receipt-corpus",
+      "label": "autoresearch-pipeline Experiment Program (Pack 2)",
+      "sourceUrl": "https://github.com/hummbl-dev/autoresearch-pipeline",
+      "evidenceGrade": "primary",
+      "verificationStatus": "self-verified",
+      "candidateOnly": true,
+      "edges": [
+        {
+          "target": "topic:governed-autoresearch",
+          "relation": "demonstrates",
+          "note": "34 governed experiments with hypothesis, baseline, noise floor, measured outcome, and KEEP/DISCARD decision recorded per experiment."
+        },
+        {
+          "target": "topic:negative-result-preservation",
+          "relation": "demonstrates",
+          "note": "32 of 34 governed experiments were DISCARD. Negative results are preserved in results.tsv and per-wave receipt docs, not silently dropped."
+        },
+        {
+          "target": "topic:noise-floor-discipline",
+          "relation": "demonstrates",
+          "note": "Two seed-repeat control experiments (PR #16, PR #18) measured noise floors of 0.180 (untuned) and 0.005 (tuned) before authorizing any architecture experiment."
+        },
+        {
+          "target": "topic:scale-dependence",
+          "relation": "documents",
+          "note": "Pack 2 nanochat frontier port (PR #24) tested 5 frontier-feature patches at 26M scale; all 5 were DISCARD. Receipt docs annotate scale thresholds for each idea pack."
+        },
+        {
+          "target": "paper:experiment-receipt-discipline-small-model-autoresearch",
+          "relation": "supports",
+          "note": "Candidate downstream paper hummbl-papers#14. Packet is candidate-only; the paper must not promote findings beyond the 26M/short-training regime without replication."
+        }
+      ]
+    }
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id, schemaVersion, and source repository URL.",
+      "Record the capturedAt timestamp and the main commit the packet was captured from.",
+      "Record that negative results (32 of 34 DISCARD) are first-class evidence, not appendix material.",
+      "Record that the 26M-parameter / short-training scope is a hard boundary; do not generalize without replication."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection.",
+      "Record whether rejection was caused by corpus completeness, provenance, evidence grade, or scope boundary."
+    ],
+    "onCite": [
+      "Cite the underlying autoresearch-pipeline repository and the specific PRs or receipt docs referenced, not this packet.",
+      "Preserve the packetStatus and authority.posture as candidate in any derivative artifact.",
+      "Do not assert that kept patches (BATCH 2x, BATCH 2x 10min) generalize beyond the 26M / short-training regime.",
+      "Do not present the corpus as a benchmark; it is a governed experiment receipt substrate, not a leaderboard."
+    ]
+  }
+}
