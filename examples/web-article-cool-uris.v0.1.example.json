@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:example:web:w3c-cool-uris",
+    "title": "W3C Cool URIs web article source packet",
+    "version": "0.1.0",
+    "scope": "Represents one public W3C web article about persistent URI design. Does not endorse W3C, canonize web architecture claims, or cover related URL/URN literature."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate"
+  },
+  "sourceContract": {
+    "sourceType": "web-page",
+    "citation": {
+      "title": "Cool URIs don't change",
+      "authors": ["Tim Berners-Lee"],
+      "year": 1998,
+      "url": "https://www.w3.org/Provider/Style/URI"
+    },
+    "provenance": {
+      "origin": "World Wide Web Consortium public web page",
+      "capturedAt": "2026-07-06T00:50:00Z",
+      "method": "Manual capture from the public W3C page; title, URL, author/copyright line, and publication year were inspected."
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "self-verified"
+  },
+  "candidateOutputs": {
+    "citationGraphEntry": {
+      "nodeId": "source:w3c:cool-uris",
+      "sourcePacketId": "rsp:example:web:w3c-cool-uris",
+      "label": "Cool URIs don't change",
+      "sourceUrl": "https://www.w3.org/Provider/Style/URI",
+      "evidenceGrade": "primary",
+      "verificationStatus": "self-verified",
+      "candidateOnly": true,
+      "edges": [
+        {
+          "target": "topic:persistent-identifiers",
+          "relation": "discusses",
+          "note": "The page argues for stable URI design and avoiding implementation details in URLs."
+        },
+        {
+          "target": "topic:provenance-metadata",
+          "relation": "mentions",
+          "note": "The page recommends capturing creation date, distribution status, and maintenance metadata."
+        }
+      ]
+    }
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id, schemaVersion, and source URL.",
+      "Record the capturedAt timestamp from the provenance trail.",
+      "Record candidateOutputs.citationGraphEntry.candidateOnly=true if importing the graph entry."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection.",
+      "Record whether rejection was caused by citation metadata, provenance, evidence grade, or candidate graph shape."
+    ],
+    "onCite": [
+      "Cite the underlying W3C page, not this packet, in derivative work.",
+      "Preserve the packetStatus and authority.posture as candidate."
+    ]
+  }
+}
