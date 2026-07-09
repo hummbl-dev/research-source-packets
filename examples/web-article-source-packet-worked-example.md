@@ -35,7 +35,6 @@ URL: https://www.w3.org/Provider/Style/URI
       "title": "Cool URIs don't change",
       "authors": ["Tim Berners-Lee"],
       "year": 1998,
-      "publisher": "W3C",
       "url": "https://www.w3.org/Provider/Style/URI"
     },
     "citationGraph": [
@@ -61,6 +60,10 @@ URL: https://www.w3.org/Provider/Style/URI
       "Record packet id and schemaVersion.",
       "Record capturedAt timestamp.",
       "Do not upgrade evidenceGrade without a live source check."
+    ],
+    "onReject": [
+      "Record the rejection reason.",
+      "Preserve the packet id and schemaVersion for audit."
     ],
     "onCite": [
       "Cite the underlying article rather than this packet.",
