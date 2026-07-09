@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:valid:autoresearch-pipeline-receipt-corpus",
+    "title": "autoresearch-pipeline receipt corpus — valid fixture",
+    "version": "0.1.0",
+    "scope": "Minimal valid fixture for the first-party experiment receipt corpus packet type."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate"
+  },
+  "sourceContract": {
+    "sourceType": "report",
+    "citation": {
+      "title": "autoresearch-pipeline Experiment Program",
+      "authors": ["Reuben Bowlby"],
+      "year": 2026,
+      "url": "https://github.com/hummbl-dev/autoresearch-pipeline/tree/f39a3eec3a24a02c1e11d421d5752953e49d10db"
+    },
+    "provenance": {
+      "origin": "hummbl-dev/autoresearch-pipeline public repository, pinned at commit f39a3eec3a24a02c1e11d421d5752953e49d10db",
+      "capturedAt": "2026-07-06T03:00:00Z",
+      "method": "Manual capture of public repo artifacts at main commit f39a3ee."
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "self-verified"
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record the packet id, schemaVersion, and source repository URL.",
+      "Record that negative results are first-class evidence."
+    ],
+    "onReject": [
+      "Record the packet id and the reason for rejection."
+    ]
+  }
+}
