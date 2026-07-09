@@ -17,10 +17,10 @@
       "title": "autoresearch-pipeline Experiment Program",
       "authors": ["Reuben Bowlby"],
       "year": 2026,
-      "url": "https://github.com/hummbl-dev/autoresearch-pipeline"
+      "url": "https://github.com/hummbl-dev/autoresearch-pipeline/tree/f39a3eec3a24a02c1e11d421d5752953e49d10db"
     },
     "provenance": {
-      "origin": "hummbl-dev/autoresearch-pipeline public repository, main branch",
+      "origin": "hummbl-dev/autoresearch-pipeline public repository, pinned at commit f39a3eec3a24a02c1e11d421d5752953e49d10db",
       "capturedAt": "2026-07-06T03:00:00Z",
       "method": "Manual capture of public repo artifacts at main commit f39a3ee."
     },

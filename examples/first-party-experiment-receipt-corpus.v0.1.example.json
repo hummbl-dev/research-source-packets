@@ -17,10 +17,10 @@
       "title": "autoresearch-pipeline Experiment Program (PRs #14-#25, Pack 2)",
       "authors": ["Reuben Bowlby"],
       "year": 2026,
-      "url": "https://github.com/hummbl-dev/autoresearch-pipeline"
+      "url": "https://github.com/hummbl-dev/autoresearch-pipeline/tree/f39a3eec3a24a02c1e11d421d5752953e49d10db"
     },
     "provenance": {
-      "origin": "hummbl-dev/autoresearch-pipeline public repository, main branch",
+      "origin": "hummbl-dev/autoresearch-pipeline public repository, pinned at commit f39a3eec3a24a02c1e11d421d5752953e49d10db",
       "capturedAt": "2026-07-06T03:00:00Z",
       "method": "Manual capture of public repository artifacts at main commit f39a3eec3a24a02c1e11d421d5752953e49d10db. Inspected program.md, results.tsv (243 data rows), docs/experiment_receipts/ (9 receipt docs), and merged PRs #14 through #25."
     },
@@ -32,7 +32,7 @@
       "nodeId": "source:autoresearch-pipeline:receipt-corpus",
       "sourcePacketId": "rsp:example:autoresearch-pipeline-receipt-corpus",
       "label": "autoresearch-pipeline Experiment Program (Pack 2)",
-      "sourceUrl": "https://github.com/hummbl-dev/autoresearch-pipeline",
+      "sourceUrl": "https://github.com/hummbl-dev/autoresearch-pipeline/tree/f39a3eec3a24a02c1e11d421d5752953e49d10db",
       "evidenceGrade": "primary",
       "verificationStatus": "self-verified",
       "candidateOnly": true,
