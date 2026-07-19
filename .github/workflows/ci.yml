@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: CI Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.13"
+
+      - name: Install JSON Schema validator
+        run: python -m pip install --disable-pip-version-check jsonschema==4.26.0
+
+      - name: Validate JSON and packet fixtures
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from jsonschema import Draft202012Validator, FormatChecker
+
+          root = Path(".")
+          json_paths = sorted(root.rglob("*.json"))
+          for path in json_paths:
+              json.loads(path.read_text(encoding="utf-8"))
+
+          schema_path = Path("schemas/research-source-packets-v0.1.json")
+          schema = json.loads(schema_path.read_text(encoding="utf-8"))
+          Draft202012Validator.check_schema(schema)
+          validator = Draft202012Validator(
+              schema,
+              format_checker=FormatChecker(),
+          )
+
+          valid_paths = sorted(Path("fixtures/valid").glob("*.json"))
+          valid_paths += sorted(Path("examples").glob("*.json"))
+          for path in valid_paths:
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              errors = sorted(
+                  validator.iter_errors(payload),
+                  key=lambda error: list(error.absolute_path),
+              )
+              if errors:
+                  raise SystemExit(f"{path}: {errors[0].message}")
+
+          invalid_paths = sorted(Path("fixtures/invalid").glob("*.json"))
+          for path in invalid_paths:
+              payload = json.loads(path.read_text(encoding="utf-8"))
+              if not list(validator.iter_errors(payload)):
+                  raise SystemExit(f"{path}: expected schema rejection")
+
+          print(
+              f"Validated {len(json_paths)} JSON files, "
+              f"{len(valid_paths)} valid packets, and "
+              f"{len(invalid_paths)} invalid fixtures."
+          )
+          PY
+
+      - name: Lint changed Markdown
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          files=()
+          if [[ ! "$BASE_SHA" =~ ^0+$ ]] && \
+             git cat-file -e "$BASE_SHA^{commit}" 2>/dev/null; then
+            while IFS= read -r -d '' file; do
+              files+=("$file")
+            done < <(
+              git diff --name-only --diff-filter=ACMR -z \
+                "$BASE_SHA" "$HEAD_SHA" -- '*.md'
+            )
+          else
+            while IFS= read -r -d '' file; do
+              files+=("$file")
+            done < <(git ls-files -z '*.md')
+          fi
+
+          if (( ${#files[@]} == 0 )); then
+            echo "No Markdown files changed."
+            exit 0
+          fi
+
+          printf 'Linting %s\n' "${files[@]}"
+          npx --yes markdownlint-cli2@0.23.0 "${files[@]}"
