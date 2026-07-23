@@ -87,6 +87,8 @@ adoption.
 Pi has undergone an identifier migration. The following table preserves all
 historical identifiers for searchability.
 
+<!-- markdownlint-disable MD013 -->
+
 | Identifier | Current status | Notes |
 | --- | --- | --- |
 | `badlogic/pi-mono` | Redirects to `earendil-works/pi` | GitHub repo transfer confirmed 2026-07-19. Original author: Mario Zechner (`badlogic`). |
@@ -95,6 +97,8 @@ historical identifiers for searchability.
 | `earendil-works/pi` | Canonical repository | Monorepo; coding agent lives at `packages/coding-agent`. Owner: Earendil Inc. (`earendil.com`). |
 | `@earendil-works/pi-coding-agent` | Canonical npm package | Current install target. |
 | `mariozechner.at` | Author blog | Mario Zechner's personal blog; hosts Pi design posts. |
+
+<!-- markdownlint-enable MD013 -->
 
 `LOCAL_AUDIT_REQUIRED`: Third-party sources that still reference
 `badlogic/pi-mono` or `@mariozechner/pi-coding-agent` (e.g.,
@@ -126,6 +130,8 @@ container, or build your own confirmation flow with extensions."
 
 ## Adoption-lane taxonomy
 
+<!-- markdownlint-disable MD013 -->
+
 | Lane | Sources | Maturity |
 | --- | --- | --- |
 | Evaluator / eval provider | promptfoo/promptfoo#9707 | Open, not merged |
@@ -154,6 +160,8 @@ container, or build your own confirmation flow with extensions."
 | agentbox#71 | Yes (`--tool pi`) | — | — | — | — | — | — | — |
 | prism#167 | — | — | — | — | Yes (status line shim) | — | — | — |
 | token-optimizer#1 | — | — | — | Yes (session parsing) | Yes (`pi/extension.ts`) | Yes | — | — |
+
+<!-- markdownlint-enable MD013 -->
 
 `HUMMBL_INTERPRETATION`: The matrix shows that no single adopter uses all Pi
 interfaces. JSON event stream and RPC are used for programmatic integration;
@@ -254,8 +262,9 @@ user's installed `pi` binary is the runtime. Disabled by default.
   (`get_available_models`), and a models-based auth verdict.
 - `PiTextGeneration` — stateless RPC + `get_last_assistant_text`.
 
-**Consolidation**: This PR consolidates earlier community attempts (#2748,
-#2800, #2831, #2856, #2812) into a single consistency-first implementation.
+**Consolidation**: This PR consolidates earlier community attempts
+(`#2748`, `#2800`, `#2831`, `#2856`, and `#2812`) into a single
+consistency-first implementation.
 
 **Review state**: CodeRabbit auto-review skipped (disabled for repo).
 Macroscope approvability verdict: "Needs human review" — 4 blocking
@@ -765,6 +774,8 @@ command-line arguments should be audited for credential leakage.
 
 ## Integration state summary
 
+<!-- markdownlint-disable MD013 -->
+
 | Source | Type | State | Maturity |
 | --- | --- | --- | --- |
 | promptfoo/promptfoo#9707 | PR | OPEN | Open, not merged, well-tested |
@@ -786,9 +797,13 @@ command-line arguments should be audited for credential leakage.
 | JuliusBrussee/caveman#551 | PR | OPEN | Open, not merged |
 | shelbon/token-optimizer#1 | PR | OPEN | Open, not merged |
 
+<!-- markdownlint-enable MD013 -->
+
 **Summary**: 1 merged, 2 closed (without merge), 1 closed (resolved), 14 open.
 No primary source is merged. The only merged integration is a secondary source
 (agent-dashboard#81, a packaging/observability profile).
+
+<!-- markdownlint-disable MD029 -->
 
 ## sources.md
 
@@ -836,6 +851,8 @@ All sources retrieved on 2026-07-19 unless otherwise noted.
 29. NikiforovAll/pi-otel#6 — <https://github.com/NikiforovAll/pi-otel/pull/6>
 30. IgorWarzocha/t3code#1 (reference fork) — <https://github.com/IgorWarzocha/t3code/pull/1>
 31. OpenClaw (real-world Pi integration) — <https://github.com/OpenClaw/OpenClaw>
+
+<!-- markdownlint-enable MD029 -->
 
 ## Candidate non-canon framing
 
