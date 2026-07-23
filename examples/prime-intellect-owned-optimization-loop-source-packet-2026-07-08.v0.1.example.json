@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "v0.1",
+  "packetStatus": "candidate",
+  "packetManifest": {
+    "id": "rsp:prime-intellect:owned-optimization-loop:2026-07-08",
+    "title": "Prime Intellect Series A and technical stack source packet",
+    "version": "0.1.0",
+    "scope": "Single bounded packet covering Series A claims and related public artifact references from July 8, 2026."
+  },
+  "authority": {
+    "producer": "hummbl-dev/research-source-packets",
+    "posture": "candidate",
+    "orcid": "0000-0000-0000-0000"
+  },
+  "sourceContract": {
+    "sourceType": "web-page",
+    "citation": {
+      "title": "Prime Intellect: The Open Stack for Self-Improving Agents",
+      "authors": ["Prime Intellect", "Intel Capital"],
+      "year": 2026,
+      "url": "https://www.primeintellect.ai/blog/series-a"
+    },
+    "provenance": {
+      "origin": "public source capture (as-of date bound)",
+      "capturedAt": "2026-07-08T00:00:00Z",
+      "method": "manual source capture and claim posture labeling"
+    },
+    "evidenceGrade": "primary",
+    "verificationStatus": "unverified"
+  },
+  "receiptRequirements": {
+    "onAccept": [
+      "Record packet id and version.",
+      "Record sourceContract.sourceType, capturedAt, and evidenceGrade without upgrading claim strength.",
+      "Mark all mapped Prime Intellect claims as SOURCE_CLAIM unless independently re-verified.",
+      "Record EXTERNALLY_REPORTED sources separately (e.g., press coverage).",
+      "Preserve DO_NOT_ADOPT_YET for any operational term before HUMMBL/BASEN/Ownward adoption."
+    ],
+    "onReject": [
+      "Record packet id, source contract citation, and rejection rationale.",
+      "Record the specific field or interpretation mismatch.",
+      "Flag any uncited or ambiguous claims as needing LOCAL_AUDIT_REQUIRED."
+    ],
+    "onCite": [
+      "Cite underlying source URLs directly and preserve source-posture tags in derivative artifacts.",
+      "Do not treat repository or system claims in this packet as HUMMBL canonical guidance."
+    ]
+  },
+  "candidateOutputs": {
+    "citationGraphEntry": {
+      "nodeId": "prime-intellect-owned-optimization-loop-2026-07-08",
+      "sourcePacketId": "rsp:prime-intellect:owned-optimization-loop:2026-07-08",
+      "label": "Prime Intellect owned optimization loop and RL stack claims",
+      "sourceUrl": "https://www.primeintellect.ai/blog/series-a",
+      "evidenceGrade": "primary",
+      "verificationStatus": "unverified",
+      "candidateOnly": true,
+      "edges": [
+        {
+          "target": "https://www.primeintellect.ai/case-study/ramp",
+          "relation": "related-case-study",
+          "note": "SOURCE_CLAIM: reported specialist spreadsheet subagent performance and environment details."
+        },
+        {
+          "target": "https://github.com/PrimeIntellect-ai/verifiers",
+          "relation": "related-implementation",
+          "note": "SOURCE_CLAIM: environment harness and eval/lr RL environment claims."
+        },
+        {
+          "target": "https://github.com/PrimeIntellect-ai/prime-rl",
+          "relation": "related-implementation",
+          "note": "SOURCE_CLAIM: runtime prerequisites and tested hardware classes."
+        }
+      ]
+    }
+  }
+}

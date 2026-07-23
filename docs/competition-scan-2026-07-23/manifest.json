@@ -1,0 +1,47 @@
+{
+  "packet_id": "competition-scan-2026-07-23",
+  "title": "AI Competition Scan — Active Competitions as of 2026-07-23",
+  "status": "candidate research packet",
+  "created": "2026-07-23",
+  "updated": "2026-07-23",
+  "authors": ["opencode (MiniMax-M3)"],
+  "review_status": "unreviewed",
+  "governance": {
+    "repo": "hummbl-dev/research-source-packets",
+    "schema_version": "research-source-packets-v0.1",
+    "krineia_chain": "hummbl-dev-primary"
+  },
+  "documents": [
+    {
+      "filename": "ai-competitions-2026-07-23.md",
+      "description": "Full competitive landscape scan: 25+ active competitions, prize breakdowns, deadlines, eligibility, gaps"
+    },
+    {
+      "filename": "HANDOFF-ai-competitions-continuation.md",
+      "description": "AGENTS.md-compliant handoff for continuation: mission, state, task, constraints, acceptance criteria"
+    }
+  ],
+  "provenance": {
+    "sources": [
+      "arcprize.org/competitions/2026",
+      "aicrowd.com/challenges",
+      "platform.k12-ai-infrastructure.org",
+      "drivendata.org/competitions",
+      "devpost.com (10 hackathons)",
+      "mlcontests.com",
+      "dataagent.top (KDD Cup 2026)",
+      "aimoprize.com",
+      "zindi.africa",
+      "huggingface.co/competitions",
+      "github.com/mlcontests/mlcontests.github.io"
+    ],
+    "methods": ["parallel webfetch", "DuckDuckGo HTML search", "multi-agent deep-dive delegation"],
+    "date": "2026-07-23"
+  },
+  "gaps": [
+    "Kaggle live listings (JS-rendered)",
+    "NeurIPS 2026 comp track (not yet announced)",
+    "Zindi active list (JS-rendered)",
+    "AI safety comps (DDG CAPTCHA-blocked)"
+  ]
+}
