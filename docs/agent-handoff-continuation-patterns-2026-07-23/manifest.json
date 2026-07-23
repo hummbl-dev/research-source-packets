@@ -1,0 +1,41 @@
+{
+  "packet_id": "agent-handoff-continuation-patterns-2026-07-23",
+  "title": "Agent Handoff/Continuation Patterns — Cross-Framework Analysis",
+  "status": "candidate research packet",
+  "created": "2026-07-23",
+  "updated": "2026-07-23",
+  "authors": ["opencode (MiniMax-M3)"],
+  "review_status": "unreviewed",
+  "governance": {
+    "repo": "hummbl-dev/research-source-packets",
+    "schema_version": "research-source-packets-v0.1",
+    "krineia_chain": "hummbl-dev-primary"
+  },
+  "documents": [
+    {
+      "filename": "agent-handoff-continuation-patterns-2026-07-23.md",
+      "description": "Comprehensive cross-framework analysis of agent handoff/continuation patterns across LangGraph, CrewAI, AutoGen, MCP, and hummbl-dev governance schemas. Includes gap analysis, integration architecture, and immediate next steps."
+    }
+  ],
+  "provenance": {
+    "sources": [
+      "LangGraph: checkpointers, stores, interrupts, persistence, memory",
+      "CrewAI: unified memory system, scopes/slices, checkpointing, checkpoint config",
+      "AutoGen: agent chat, agent handoff tool, MCP workbench, core/agentchat/ext packages",
+      "MCP: architecture, primitives (tools/resources/prompts), elicitation, sampling",
+      "hummbl-dev/agent-handoffs: agent-handoffs-v0.1.json, conversation-work-session-handoff-profile-v0.1.json",
+      "hummbl-dev/agent-control-plane-patterns: prior-art.md (vocabulary mapping)",
+      "hummbl-dev/hummbl-dev: KRINEIA.md, CONSTITUTION.md, hummbl.repo.yaml"
+    ],
+    "methods": ["parallel webfetch", "schema analysis", "vocabulary mapping", "gap matrix"],
+    "date": "2026-07-23"
+  },
+  "gaps": [
+    "No runtime validator for agent-handoffs-v0.1 schema",
+    "No checkpointer integration for KRINEIA receipt emission",
+    "No cross-framework ResumeToken format/parser",
+    "No capability gap ledger reporter (LangGraph store)",
+    "No unified HITL protocol (LangGraph interrupt vs CrewAI checkpoint vs AutoGen tool vs MCP elicitation)",
+    "No cross-framework fork/time-travel protocol"
+  ]
+}
